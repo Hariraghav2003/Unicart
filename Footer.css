@@ -1,0 +1,10 @@
+.footer{
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    flex-flow:row;
+    column-count: 4;
+    column-gap: 200px;
+}
+

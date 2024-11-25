@@ -1,0 +1,30 @@
+a{
+   text-decoration: none;
+   color: black;
+}
+.products img{
+    width:150px;
+    height: 100px;
+}
+.products ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items:center;
+    background-color: #ffffff;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    column-gap: 65px;
+}
+.productcard img{
+    width:200px;
+    height: 200px;
+}
+.cardlink{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 8px;
+    border-radius: 10px;
+}
+

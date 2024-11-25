@@ -1,0 +1,27 @@
+.productimagescarousel{
+    width:500px;
+    height:500px;
+    margin-top: 100px;
+}
+.productshow{
+    display: flex;
+    flex-direction:row;
+    padding: 20px;
+    column-gap: 40px;
+}
+
+.productimages{
+    display: flex;
+    flex-direction: column;
+    width:200px;
+    height: 200px;
+    row-gap: 20px;
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding: 8px;
+    border-radius: 10px;
+}

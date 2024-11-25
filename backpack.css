@@ -1,0 +1,14 @@
+.backpack{
+
+    display: grid;
+    grid-template-columns: auto auto auto auto ;
+    justify-content: center;
+   
+    row-gap: 35px;
+   
+}
+.productcard img{
+    width: 200px;
+    height: 250px;
+ 
+}

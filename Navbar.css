@@ -1,0 +1,14 @@
+nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items:center;
+    background-color: white;
+    flex-wrap: wrap;
+
+
+}
+nav li{
+    padding-left: 20px;
+
+}

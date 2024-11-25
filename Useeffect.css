@@ -1,0 +1,23 @@
+.cardapi img{
+    height: 250px;
+    width: 200px;
+}
+.cardapi{
+    display:grid;
+    grid-template-columns: auto auto auto auto;
+    margin-top: 20px;
+
+    row-gap: 50px;
+    
+}
+
+.cardone{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin-left: 20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    width: 300px;
+    border-radius: 20px;
+    border: solid gold 2px;
+}
