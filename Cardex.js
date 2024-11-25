@@ -11,10 +11,13 @@ function Cardex({cardtitle,cardtext,carditem1,carditem2,productimage,id}) {
     const handleCardClick = (id) => {
         console.log(id);
       navigate(`/product-details/${id}`); // Redirect to the specific product details page
-      
-    
     };
+     const handlecart =(id) =>{
+      console.log(id);
+      navigate(`/cart/${id}`);
+     }
 return (
+<div>
 <div className='productcard'  onClick={() => handleCardClick(id)} style={{cursor:'pointer'}}>
   <Card style={{ width: '18rem'}}>
     <Card.Img variant="top" src={productimage} />
@@ -28,12 +31,14 @@ return (
       <ListGroup.Item>{carditem1}</ListGroup.Item>
       <ListGroup.Item>{carditem2} <FaStarHalfAlt style={{color:'yellow',fontSize:'20px',position:'absolute'}}></FaStarHalfAlt></ListGroup.Item>
     </ListGroup> {" "} <br></br>
-    <Card.Body style={{marginTop:'15px'}}>
+  </Card>
+  </div>
+    <Card.Body className='purchasebuttons'>
         <Card.Link href="/about" className='cardlink'>Buy Now</Card.Link> &nbsp;
-        <Card.Link href="#" className='cardlink'>Add to cart</Card.Link>{" "} 
+        <Card.Link onClick={()=>handlecart(id)} style={{cursor:'pointer'}} className='cardlink'>Add to cart</Card.Link>{" "} 
     </Card.Body>
 
-  </Card>
+
   </div>
 
 );

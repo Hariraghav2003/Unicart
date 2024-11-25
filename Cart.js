@@ -1,32 +1,19 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import { Image } from 'antd';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import "./Productdetails.css";
-import Navbar from '../Navbar/Navbar';
-import { FaStarHalfAlt } from "react-icons/fa";
-import { useNavigate,useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { FaStarHalfAlt } from 'react-icons/fa';
+import './cart.css';
+import Cardex from '../Cardex';
 import Footerex from '../Footer/Footerex';
+import Navbar from '../Navbar/Navbar';
 
-function Productdetails() {
-  const location = useLocation();
-  const loc=location.pathname;
-  console.log(loc);
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-  };
+import Badge from '@mui/material/Badge';
+
+
+
+function Cart( {cart ,setCart}) { 
   const { id } = useParams(); // Extract product ID from URL
-    console.log(id);
-  // Example product data (you can replace this with an API call or context)
+  const navigate = useNavigate();
+
   const products = [
     {
       id: "Harddisk",
@@ -161,101 +148,100 @@ function Productdetails() {
      productrating:"User Rating 3.4"},
   ];
 
-  // Find the product by ID
-  const product = products.find((prod) => prod.id == id);
-  const navigate = useNavigate();
-   useEffect(() => {
+  const product = products.find((prod) => prod.id === id); 
+  useEffect(() => {
     if (!product) {
       alert("Product out of Stock!!");
-      navigate('/'); // Redirect to the home page
-    }
-  }, [product, navigate]); // Ensure useEffect reacts to product changes
+      navigate('/'); // Redirect to the home page if product doesn't exist
+    } else {
+      setCart((prevCart) => {
+        console.log('Previous Cart State:', prevCart);
+        console.log('New Product:', product);
 
-  if (!product) {
-    return null; // Prevent rendering if no product
+        // If you want to add or update the product in the cart with its ID as key
+        return {
+          ...prevCart,
+          [product.id]:{...product}, // Add or update the product in the cart
+        };
+      });
+      
+    }
+  },[navigate]);
+
+
+
+  if (!cart) {
+    return <p>Loading...</p>; // Loading state
   }
 
+  const ProductList = () => {
+    return (
+      <div>
+       <h1 style={{textAlign:'center'}}>Your Cart</h1> 
+       <div className='cards'>
+       
+        {Object.keys(cart).map(productId => {
+          const product = cart[productId];
+          return (
+            <div key={product.id}>
+              <Badge badgeContent={3} color="primary" style={{marginLeft:"20px",marginBottom:"-30px"}}>
+              <div className="cartcard">
+              
+                <img src={`/${product.productimage}`} style={{ width: 200 }} alt="product" />
+               
+                <h1>{product.title}</h1>
+                <span>
+                  {product.productrating} 
+                  <FaStarHalfAlt style={{ color: 'yellow', fontSize: '20px', position: 'absolute' }} />
+                </span>
+                <hr />
+                <span>{product.productdescrption.substring(0,100)}</span>
+                <hr />
+                <span>{product.productprice}</span>
+                <span></span>
+                <hr />
+                <br />
+                <a href="#" className="link">Buy Now</a> &nbsp;
+                <a href="#" className="link">Add to cart</a>
+              </div>
+              </Badge> 
+            </div>
+          );
+        })}
+    
+       </div>
+      </div>
+    );
+  };
+  const title = cart[product.id]?.title;
+
+  console.log(title); // Output: "Hard Disk"
   
   return (
     <div>
-    <Navbar></Navbar>
-    <div className='productshow'>
-      <div className='productimages'>
-          <Image.PreviewGroup>
-              <Image src={`/${product.productimage}`}/>
-          </Image.PreviewGroup>
-          
-          <Image.PreviewGroup>
-            <Image src={`/${product.productimageone}`}/>
-          </Image.PreviewGroup>
-          
-          <Image.PreviewGroup>
-              <Image src={`/${product.productimagetwo}`}/>
-          </Image.PreviewGroup>
-          <Image.PreviewGroup>
-              <Image src={`/${product.productimagethree}`}/>
-          </Image.PreviewGroup>
-      </div>
-      <div>
-        <Slider {...settings} className='productimagescarousel'>
-          
-            <div>
-              <Image.PreviewGroup>
-                  <Image src={`/${product.productimage}`}/>
-              </Image.PreviewGroup>
-            </div>
-            <div>
-              <Image.PreviewGroup>
-                  <Image src={`/${product.productimageone}`}/>
-              </Image.PreviewGroup>
-            </div>
-            <div>
-              <Image.PreviewGroup>
-                  <Image src={`/${product.productimagetwo}`}/>
-              </Image.PreviewGroup>
-            </div>
-            <div>
-              <Image.PreviewGroup>
-                  <Image src={`/${product.productimagethree}`}/>
-              </Image.PreviewGroup>
-            </div>
-          </Slider>
-      </div>
-     <div>
-      <div className='thumbnail'>
-          <img src={`/${product.productimage}`} style={{width:200}} alt="err"/>
-      </div>
-      <div className='thumbnailmobile'>
-          <Image.PreviewGroup>
-            <Image src={`/${product.productimage}`} style={{width:200}} />
-          </Image.PreviewGroup> 
-          <Image.PreviewGroup>
-            <Image src={`/${product.productimageone}`} style={{width:200}} />  
-          </Image.PreviewGroup>
-          <Image.PreviewGroup>
-            <Image src={`/${product.productimagetwo}`}style={{width:200}} />
-          </Image.PreviewGroup> 
-          <Image.PreviewGroup>
-            <Image src={`/${product.productimagethree}`}style={{width:200}} />
-          </Image.PreviewGroup> 
-      </div>
-        <h1>{product.title}</h1>
-        <p> {product.productrating} <FaStarHalfAlt style={{color:'yellow',fontSize:'20px',position:'absolute'}}></FaStarHalfAlt></p> <hr></hr>
-          <p>{product.productdescrption}</p> <hr></hr>
-          <p>Price: {product.productprice}</p>  
+    {/* <div key={cart[product.id]?.id}>
+      <div className='cartcard'>
+          <img src={`/${cart[product.id]?.productimage}`} style={{width:200}} alt="err"/>
+          <h1>{ cart[product.id]?.title}</h1>
+          <p> {cart[product.id]?.productrating} <FaStarHalfAlt style={{color:'yellow',fontSize:'20px',position:'absolute'}}></FaStarHalfAlt></p> <hr></hr>
+          <p>{cart[product.id]?.productdescrption}</p> <hr></hr>
+          <p>Price: {cart[product.id]?.productprice}</p>  
           <p>Inclusive of all taxes EMI starts at ₹250. No Cost EMI available </p><hr></hr> <br></br>
           <a href='#'className='link'>Buy Now</a> &nbsp;
           <a href='#'className='link'>Add to cart</a>
-          
-     </div>
-
-    </div> 
-    <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
-    <Footerex ></Footerex>
-    <br></br>
+      </div>
     </div>
+    
+    <h2>Full Cart Data:</h2>
+    <pre>{JSON.stringify(cart, null, 2)}</pre> */}
+    <Navbar></Navbar>
+    <ProductList></ProductList> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
+    <Footerex></Footerex>
+    <br></br>
+  </div>
+
+
   );
-};
+}
 
-export default Productdetails;
-
+export default Cart;

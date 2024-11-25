@@ -25,3 +25,34 @@
     padding: 8px;
     border-radius: 10px;
 }
+.thumbnailmobile{
+    display: none;
+}
+@media screen and (min-width:481px) and (max-width:768px){
+    .productshow{
+        display: flex;
+        flex-direction:column;
+        padding: 20px;
+        column-gap: 40px;
+    }
+    .productimages{
+        display: none;
+    }
+    .productimagescarousel{
+        width:400px;
+        height:400px;
+        margin-top: 0px;
+        margin-bottom: 30px;
+    }
+    .thumbnail{
+        display: none;
+    }
+    .thumbnailmobile{
+        display: grid;
+        grid-template-columns: auto auto;
+        row-gap: 20px;
+    }
+
+
+
+}

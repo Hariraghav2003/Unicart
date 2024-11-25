@@ -27,4 +27,116 @@ a{
     padding: 8px;
     border-radius: 10px;
 }
+.homepagetext{
+    display:flex;
+    flex-direction:'row';
+    flex-wrap: wrap;
+    margin-left:290px;
+}
+.homepagetextone{
+    font-size:50px;
+}
+.tab{
+    width:400px;
+    margin-left:558px;
+}
+.tabcard{
+  display:flex;
+  justify-content:center;
+}
+
+.bestsellerscard{
+    display:flex;
+    justify-content:center;
+
+}
+.jackettext{
+    padding-top:-10;
+    padding-left:50px        
+}
+
+.ornamentstext{
+   padding-top:-10px;
+   padding-left:40px;
+}
+.backpacktext{
+    padding-top:10px;
+    padding-left:40px;
+}
+
+.gadgetstext{
+    padding-top:-10px;
+    padding-left:48px;
+}
+@media screen and (min-width:481px) and (max-width:768px){
+    .homepagetext{
+        display:flex;
+        flex-direction:'row';
+        flex-wrap: wrap;
+        margin-left:0px;
+    }
+    .elegantone{
+        width: 150px;
+    }
+    .homepagetextone{
+        font-size:20px;
+    }
+    .eleganttwo{
+        width: 150px;
+    }
+    .tab{
+        width:400px;
+        margin-left:60px;
+    }
+    .tabcard{
+        display:flex;
+        justify-content:center;
+        flex-wrap: wrap;
+        flex-direction: column;
+
+        margin-left: 0px;
+        row-gap: 80px;
+    }
+    .bestsellerscard{
+        display:flex;
+        justify-content:center;
+        flex-wrap: wrap;
+        flex-direction: column;
+        row-gap: 80px;
+        margin-left: 88px;
+    }
+    .products img{
+        width:100px;
+        height: 100px;
+    }
+    .products ul{
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        align-items:center;
+        background-color: #ffffff;
+        flex-wrap: wrap;
+        margin-top: 30px;
+        column-gap: 5px;
+    }
+    .category{
+        display: none;
+    }
+    .jackettext{
+        padding-top:-10;
+        padding-left:26px        
+    }
+    .ornamentstext{
+        padding-top:-10px;
+        padding-left:20px;
+     }
+     .backpacktext{
+        padding-top:10px;
+        padding-left:15px;
+    }
+    .gadgetstext{
+        padding-top:-10px;
+        padding-left:25px;
+    }
+}
 

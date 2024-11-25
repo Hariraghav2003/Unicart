@@ -3,3 +3,48 @@
     height: 400px;
 
 }
+
+.textone{
+    position: absolute;
+    top:50px;
+    left:1400px;
+    font-size:30px;
+}
+
+.texttwo{
+    font-family:'Times New Roman';
+    font-size:80px;
+    color:red
+}
+
+.textthree{
+   padding-left:480px;
+   font-size:18px;
+}
+
+.textfour{
+        padding-Left:450px;
+        font-size:18px;
+}
+@media screen and (min-width:481px) and (max-width:768px){
+    .textone{
+        position: absolute;
+        top:50px;
+        left:390px;
+        font-size:20px;
+    }
+    .texttwo{
+        font-family:'Times New Roman';
+        font-size:80px;
+        color:red
+    }
+    .textthree{
+        padding-left:50px;
+        font-size:18px;
+    }
+    .textfour{
+        
+        padding-Left:6px;
+        font-size:18px;
+    }
+}

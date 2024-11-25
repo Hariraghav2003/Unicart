@@ -9,6 +9,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
 import { Link } from 'react-router-dom';
+import { MdOutlineMailOutline } from "react-icons/md";
 const { Header, Footer, Content } = Layout;
 
 const headerStyle = {
@@ -31,19 +32,16 @@ const footerStyle = {
   color: '#fff',
   backgroundColor: '#F60839',
 };
-const layoutStyle = {
 
-  overflow: 'hidden',
 
-};
 const Footerex = () => (
   <div >
 
-    <Layout style={layoutStyle}>
+    <Layout >
       <Header style={headerStyle}></Header>
       <Content style={contentStyle}>
       <div className='footer'>
-        <div style={{width:500,marginLeft:20}}>
+        <div className='footertext'>
           <h2>Unicart</h2>
           <span style={{textAlign:'justify'}}>
           Unicart is an online platform that offers a wide range of products, 
@@ -67,9 +65,9 @@ const Footerex = () => (
         </div>
         <div style={{textAlign:'justify',lineHeight:'1.5'}}>
           <h2>Contact info</h2>
-          <span style={{lineHeight:'2.0'}}>
-          <FaPhoneVolume style={{color:'white',fontSize:'15px'}} ></FaPhoneVolume> +91 789465710<br></br>
-          <MdEmail style={{color:'white',fontSize:'17px'}} /> hariraghava21s@gmail.com <br></br>
+          <span style={{lineHeight:'2.0',textAlign:"justify",textOverflow:"clip"}}>
+          <FaPhoneVolume style={{color:'white',fontSize:'15px'}} ></FaPhoneVolume> +91 789465710 <br></br>
+          <MdEmail className='emailicon'/> <span className="email"> hariraghava21s@gmail.com </span><br></br>
           <MdLocationPin style={{color:'white',fontSize:'17px'}} /> India <br></br>
           </span>
         </div>

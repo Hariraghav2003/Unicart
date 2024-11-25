@@ -12,3 +12,14 @@
     height: 250px;
  
 }
+@media screen and (min-width:481px) and (max-width:768px){
+    .backpack{
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-left: 68px;
+        row-gap: 75px;
+       
+    }
+}

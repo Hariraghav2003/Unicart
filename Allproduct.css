@@ -1,7 +1,16 @@
 .allproduct{
     display: grid;
 
-    row-gap: 35px;
+    row-gap: 60px;
     grid-template-columns: auto auto auto auto;
 }
+@media screen and (min-width:481px) and (max-width:768px){
+    .allproduct{
 
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-left: 70px;
+       
+    }
+}

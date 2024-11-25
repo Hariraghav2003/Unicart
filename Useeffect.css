@@ -21,3 +21,14 @@
     border-radius: 20px;
     border: solid gold 2px;
 }
+
+@media screen and (min-width:481px) and (max-width:768px){
+    .cardapi{
+
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-left: 70px;
+       
+    }
+}

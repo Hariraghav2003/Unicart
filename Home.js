@@ -35,7 +35,7 @@ function Home() {
                 </TabList>
               </Box>
               <TabPanel value="1"> 
-                  <div style={{display:'flex',justifyContent:'center'}}>
+                  <div className='tabcard'>
                   <Cardex 
                   id={"Harddisk"}
                   productimage={'./Harddisk.jpg'}
@@ -72,7 +72,7 @@ function Home() {
       
               </TabPanel>
               <TabPanel value="2">
-                  <div style={{display:'flex',justifyContent:'center'}}>
+                  <div className='tabcard'>
                       <Cardex
                       id={"LGFrostFree"}
                       productimage={'./fridge.jpeg'}
@@ -109,7 +109,7 @@ function Home() {
                   </div>
               </TabPanel>
               <TabPanel value="3">
-                  <div style={{display:'flex',justifyContent:'center'}}>
+                  <div className='tabcard'>
                   <Cardex
                       id={"CharismaticClassic"}
                       productimage={'./Menbrace.jpg'}
@@ -158,47 +158,47 @@ function Home() {
           
                 <li onClick={() => handlebackpackclick()} style={{cursor:'pointer'}} >
                     <img src='./backpack.jpg' alt='backpack'></img> <br></br>
-                    <span style={{paddingTop:-10,paddingLeft:40}}> Backpacks </span>
+                    <span className='backpacktext'> Backpacks </span>
                 </li>
 
                 <li>
                     <img src='./dress.jpg' alt='backpack'></img> <br></br>
-                    <span style={{paddingTop:-10,paddingLeft:50}}> Jackets </span>
+                    <span className='jackettext'> Jackets </span>
                 </li>
                 <li>
                     <img src='./ornaments.jpg'alt='backpack'></img> <br></br>
-                    <span style={{paddingTop:-10,paddingLeft:40}}> Ornaments </span>
+                    <span className='ornamentstext'> Ornaments </span>
                 </li>
                 <li>
                     <img src='./electronics.jpg'alt='backpack'></img> <br></br>
-                    <span style={{paddingTop:-10,paddingLeft:48}}> Gadgets </span>
+                    <span className='gadgetstext'> Gadgets </span>
                 </li>
-                <li>
+                <li className="category">
                     <img src='./Homeappliance.jpg'alt='backpack'></img>  <br></br>
                     <span style={{paddingTop:-10,paddingLeft:25}}> Homeappliance </span>
                 </li>
-                <li>
+                <li className="category">
                     <img src='./toys.jpg'alt='backpack'></img><br></br>
                     <span style={{paddingTop:-10,paddingLeft:60}}> Toys </span>
                 </li>
-                <li>
+                <li className="category">
                     <img src='./Grocery.jpeg'alt='backpack'></img><br></br>
                     <span style={{paddingTop:-10,paddingLeft:60}}> Grocery </span>
                 </li>
             </ul>
         </div> <br></br>
         <Carousel></Carousel> <br></br> <br></br>
-        <div style={{display:'flex',flexDirection:'row',flexWrap:'wrap',marginLeft:290}}>
-            <img src="./elegantone.jpg" alt="elegant"></img>  
-            <span style={{fontSize:50}}>  Our Top Categories</span>
-            <img src="./eleganttwo.jpg" alt="elegant"></img>  
+        <div className='homepagetext'>
+            <img src="./elegantone.jpg" alt="elegant" className='elegantone'></img>  
+            <span className='homepagetextone'>  Our Top Categories</span>
+            <img src="./eleganttwo.jpg" alt="elegant" className='eleganttwo'></img>  
         </div>
         <br></br>
-        <div style={{width:400,marginLeft:558}}> 
+        <div className='tab'> 
             <LabTabs></LabTabs>
         </div> <br></br>
         <h1>Best-Sellers  <HiTrendingUp style={{fontSize:40 ,position:'absolute'}}></HiTrendingUp> </h1> <hr></hr> <br></br>
-        <div style={{display:'grid',gridTemplateColumns:'auto auto auto auto'}}>
+        <div className='bestsellerscard'>
             <Cardex 
                    id={"AntEsportsElite"}
                   productimage={'./Ant Esports Elite.jpg'}
@@ -232,7 +232,7 @@ function Home() {
             carditem2="User Rating 4.5"> </Cardex>
 
         </div>
-        <br></br>
+        <br></br> <br></br> <br></br> <br></br>
         <Footerex></Footerex>
         <br></br>
     </div>
