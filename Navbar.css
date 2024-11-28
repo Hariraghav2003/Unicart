@@ -1,38 +1,9 @@
- .desktopnavbar nav ul{
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    align-items:center;
-    background-color: white;
-    flex-wrap: wrap;
 
-}
- .desktopnavbar nav li{
-    padding-left: 20px;
-
-}
-.mobilenavbar{
+.drawer{
     display: none;
 }
 @media screen and (min-width:481px) and (max-width:768px){
-    .mobilenavbar{
+    .drawer{
         display: block;
-    }
-
-    .desktopnavbar{
-        display: none;
-    }
-    .mobilenavbar nav ul{
-        display: flex;
-        flex-direction: row;
-        list-style-type: none;
-        align-items:center;
-        background-color: white;
-        flex-wrap: wrap;
-    
-    }
-     .mobilenavbar nav li{
-        padding-left: 20px;
-    
     }
 }

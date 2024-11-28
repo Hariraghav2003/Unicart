@@ -7,7 +7,7 @@ function Backpack() {
 
   return (
     <div>
-        <Navbar></Navbar>
+        <Navbar></Navbar> <br></br> <br></br>
         <div className='backpack'>
             <Cardex 
             id="Fjallraven"
@@ -105,7 +105,7 @@ function Backpack() {
             carditem1="Price:₹ 5,500"
             carditem2="User Rating 4.5"> </Cardex>
         </div>
-        <br></br>
+        <br></br> <br></br>
         <Footerex></Footerex>
         <br></br>
 

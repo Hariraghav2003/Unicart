@@ -4,13 +4,25 @@
     padding-left: 20px;
     padding-top: 10px;
     padding-bottom: 20px;
-    width: 300px;
+    width: 200px;
     border-radius: 20px;
-    height: 580px;
+    height: 350px;
     border: solid gold 2px;
 }
 
-.purchasebuttons{
-    margin-top: -60px;
-    margin-left: 40px;
+
+
+.productcard img{
+    width: 150px;
+    height: 150px;
+ 
 }
+
+.productcard:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 10px 20px;
+}
+
+
+

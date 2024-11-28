@@ -13,6 +13,10 @@ import Footerex from '../Footer/Footerex';
 
 function Productdetails() {
   const location = useLocation();
+  const handlecart =(id) =>{
+    console.log(id);
+    navigate(`/cart/${id}`);
+   }
   const loc=location.pathname;
   console.log(loc);
   const settings = {
@@ -244,8 +248,8 @@ function Productdetails() {
           <p>{product.productdescrption}</p> <hr></hr>
           <p>Price: {product.productprice}</p>  
           <p>Inclusive of all taxes EMI starts at ₹250. No Cost EMI available </p><hr></hr> <br></br>
-          <a href='#'className='link'>Buy Now</a> &nbsp;
-          <a href='#'className='link'>Add to cart</a>
+          <span className='link'>Buy Now</span> &nbsp;
+          <span onClick={()=>handlecart(id)} style={{cursor:'pointer'}} className='link'>Add to cart</span>
           
      </div>
 

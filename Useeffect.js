@@ -6,33 +6,28 @@ import { useNavigate } from 'react-router-dom';
 import "./Useeffect.css"
 function Useeffect() {
   function Cardapi({cardtitle,cardtext,carditem1,carditem2,productimage,id}) {
-        
     const navigate = useNavigate();
-  
     const handleCardClick = (id) => {
         console.log(id);
       navigate(`/product-details/${id}`); // Redirect to the specific product details page
     };
 return (
-<div onClick={() => handleCardClick(id)} style={{cursor:'pointer'}} className='cardone'>
-  <Card style={{ width: '18rem'}}>
-    <Card.Img variant="top" src={productimage} />
-    <Card.Body>
-      <Card.Title style={{fontSize:25, paddingBottom:-10}}> {cardtitle.substring(0,20)} </Card.Title>
-      <Card.Text style={{width:200,height:200,marginBottom:-50,fontSize:15,backgroundColor:'lightgrey'}}>
-            {cardtext.substring(0,100)}
-      </Card.Text>
-    </Card.Body>
-    <ListGroup className="list-group-flush">
-      <ListGroup.Item>Price: ${carditem1}</ListGroup.Item>
-      <ListGroup.Item>Userrating: {carditem2} <FaStarHalfAlt style={{color:'yellow',fontSize:'20px',position:'absolute'}}></FaStarHalfAlt></ListGroup.Item>
-    </ListGroup> {" "} <br></br>
-    <Card.Body  style={{marginTop:'15px'}}>
-        <Card.Link href="/about" className='cardlink'>Buy Now</Card.Link> &nbsp;
-        <Card.Link href="#" className='cardlink'>Add to cart</Card.Link>{" "} 
-    </Card.Body>
-
-  </Card>
+  <div>
+    <div onClick={() => handleCardClick(id)} style={{cursor:'pointer'}} className='cardone'>
+      <Card style={{ width: ''}}>
+        <Card.Img variant="top" src={productimage} />
+        <Card.Body>
+          <Card.Title style={{fontSize:15, paddingBottom:-10 ,fontWeight:"bold"}}> {cardtitle.substring(0,20)}  </Card.Title> 
+          <Card.Text  style={{width:200,height:160,marginBottom:-50,fontSize:13,backgroundColor:'#F2E5BF',marginLeft:-15,paddingLeft:10}}>
+                {cardtext.substring(0,100)}
+          </Card.Text>
+        </Card.Body>
+        <ListGroup className="list-group-flush">
+          <ListGroup.Item style={{fontSize:13}}>Price: ${carditem1}</ListGroup.Item>
+          <ListGroup.Item style={{fontSize:13}}>Userrating: {carditem2} <FaStarHalfAlt style={{color:'yellow',fontSize:'20px',position:'absolute'}}></FaStarHalfAlt></ListGroup.Item>
+        </ListGroup> {" "} <br></br>
+      </Card>
+    </div>
   </div>
 
 );
@@ -59,9 +54,7 @@ return (
   if(loading){
     return <h2>Loading...</h2> // To Show loading message while fetching data
 
-  }
-  
-  
+  }  
   return (
     <div className='cardapi'>
       {productList.map((product) => (
@@ -79,5 +72,4 @@ return (
     </div>
   );
 }
-
 export default Useeffect;

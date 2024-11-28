@@ -24,6 +24,7 @@
     background-color: black;
     padding: 8px;
     border-radius: 10px;
+    font-size: 15px;
 }
 .thumbnailmobile{
     display: none;

@@ -35,8 +35,7 @@ const footerStyle = {
 
 
 const Footerex = () => (
-  <div >
-
+  <div>
     <Layout >
       <Header style={headerStyle}></Header>
       <Content style={contentStyle}>
@@ -60,8 +59,6 @@ const Footerex = () => (
           <Link to ="/product"  style={{color:'white'}}> Products </Link>   <br></br>
             About Us <br></br>
           </span>
- 
-          
         </div>
         <div style={{textAlign:'justify',lineHeight:'1.5'}}>
           <h2>Contact info</h2>
@@ -72,12 +69,9 @@ const Footerex = () => (
           </span>
         </div>
       </div>
-
-
       </Content>
       <Footer style={footerStyle}>Designed by Hariraghav</Footer>
     </Layout>
-
   </div>
 );
 export default Footerex;

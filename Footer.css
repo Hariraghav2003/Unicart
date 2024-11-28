@@ -10,9 +10,7 @@
     width:500px;
     margin-left:20px;
 }
-.emailicon{
 
-}
 @media screen and (min-width:481px) and (max-width:768px){
     .footertext{
         width: 500px;
@@ -20,9 +18,7 @@
         text-align: justify;
     }
     .footer{
-
         display: flex;
-    
         flex-flow:row;
         column-count: 3;
         column-gap: 20px;
@@ -32,8 +28,7 @@
        font-size:17px;
        position:absolute;
        left:290px;
-        margin-top: 5px;
-      
+       margin-top: 5px;
     }
     .email{
         margin-left:25px;

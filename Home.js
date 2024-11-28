@@ -142,7 +142,6 @@ function Home() {
                       carditem1="Price:₹ 339"
                       carditem2="User Rating 3.4"
                       ></Cardex>
-   
                   </div>
               </TabPanel>
             </TabContext>
@@ -230,7 +229,22 @@ function Home() {
             cardtext="FUR JADEN 40L Weekender Travel Laptop Backpack with Anti Theft Pocket, Organizer, 15.6 Inch Padded Laptop Sleeve and Dual Handles"
             carditem1="Price:₹ 4,500"
             carditem2="User Rating 4.5"> </Cardex>
-
+            <Cardex
+            id="Silvernaroring"
+            productimage='./Silvernaroring.jpg'
+            cardtitle="Silvernaro Ring"
+            cardtext="CLARA Pure 925 Sterling Silver Nario Adjustable Ring |Gift for Men and Boys | Partial Matte Finish"
+            carditem1="Price:₹ 1,500"
+            carditem2="User Rating 4.5">
+            </Cardex>
+            <Cardex 
+                id="ViewSonic"
+                productimage='./Gamingmonitor.jpg'
+                cardtitle="ViewSonic" 
+                cardtext="ViewSonic (from USA) - VX2428 60.96 Cm (24 ) FHD IPS Monitor|Super Clear IPS Panel |180 Hz|1Ms Response time| HDR10| Srgb104%."
+                carditem1="Price:₹ 11,500"
+                carditem2="User Rating 4.5">
+            </Cardex>
         </div>
         <br></br> <br></br> <br></br> <br></br>
         <Footerex></Footerex>

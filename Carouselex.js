@@ -1,12 +1,8 @@
 import React from 'react';
-
-import './Carouselex.css'
-
-
+import './Carouselex.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
 const Carousel = () => {
   const settings = {
     dots: true,
@@ -21,12 +17,11 @@ const Carousel = () => {
   return (
     <div style={{ width: '80%', margin: 'auto' }}>
       <Slider {...settings} className='Carousel '>
-      
         <div>
-        <span className="textone">Gear up your lifestyle with <br></br>
-          <span className="texttwo">Unicart</span>  </span>
-          <img src="../Carouselimageone.jpg" alt="Slide 2" style={{ width: '100%' }} />
-        </div>
+          <span className="textone">Gear up your lifestyle with <br></br>
+            <span className="texttwo">Unicart</span>  </span>
+            <img src="../Carouselimageone.jpg" alt="Slide 2" style={{ width: '100%' }} />
+          </div>
         <div>
           <img src="../Carouselimagetwo.jpg" alt="Slide 2" style={{ width: '100%' }} />
           <span className="textthree">Get gadgets to improve your device</span>

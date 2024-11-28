@@ -1,19 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { FaStarHalfAlt } from 'react-icons/fa';
 import './cart.css';
-import Cardex from '../Cardex';
 import Footerex from '../Footer/Footerex';
 import Navbar from '../Navbar/Navbar';
-
 import Badge from '@mui/material/Badge';
-
-
-
 function Cart( {cart ,setCart}) { 
   const { id } = useParams(); // Extract product ID from URL
   const navigate = useNavigate();
-
+  const handlecart =(id) =>{
+    console.log(id);
+    navigate(`/cart/${id}`);
+   }
   const products = [
     {
       id: "Harddisk",
@@ -147,8 +145,7 @@ function Cart( {cart ,setCart}) {
       productprice:"Price:₹ 339",
      productrating:"User Rating 3.4"},
   ];
-
-  const product = products.find((prod) => prod.id === id); 
+  const product = products.find((prod) => prod.id == id); 
   useEffect(() => {
     if (!product) {
       alert("Product out of Stock!!");
@@ -157,53 +154,39 @@ function Cart( {cart ,setCart}) {
       setCart((prevCart) => {
         console.log('Previous Cart State:', prevCart);
         console.log('New Product:', product);
-
         // If you want to add or update the product in the cart with its ID as key
         return {
           ...prevCart,
           [product.id]:{...product}, // Add or update the product in the cart
         };
-      });
-      
+      });  
     }
   },[navigate]);
-
-
-
   if (!cart) {
     return <p>Loading...</p>; // Loading state
   }
-
   const ProductList = () => {
     return (
       <div>
        <h1 style={{textAlign:'center'}}>Your Cart</h1> 
        <div className='cards'>
-       
         {Object.keys(cart).map(productId => {
           const product = cart[productId];
           return (
             <div key={product.id}>
               <Badge badgeContent={3} color="primary" style={{marginLeft:"20px",marginBottom:"-30px"}}>
-              <div className="cartcard">
-              
-                <img src={`/${product.productimage}`} style={{ width: 200 }} alt="product" />
-               
-                <h1>{product.title}</h1>
-                <span>
-                  {product.productrating} 
-                  <FaStarHalfAlt style={{ color: 'yellow', fontSize: '20px', position: 'absolute' }} />
-                </span>
-                <hr />
-                <span>{product.productdescrption.substring(0,100)}</span>
-                <hr />
-                <span>{product.productprice}</span>
-                <span></span>
-                <hr />
-                <br />
-                <a href="#" className="link">Buy Now</a> &nbsp;
-                <a href="#" className="link">Add to cart</a>
-              </div>
+                <div className="cartcard">
+                  <img src={`/${product.productimage}`} style={{ width: 200 }} alt="product" />
+                  <h1  style={{fontSize:15, paddingBottom:-10 ,fontWeight:"bold"}}>{product.title}</h1>
+                  <span style={{width:200,height:160,marginBottom:-50,fontSize:13,backgroundColor:'#F2E5BF',marginLeft:0,textAlign:"justify"}}>{product.productdescrption.substring(0,100)}</span>
+                  <hr/>
+                  <span style={{fontSize:13}}>{product.productprice}</span> <br></br>
+                  <span style={{fontSize:13}}>
+                    {product.productrating} 
+                    <FaStarHalfAlt style={{ color: 'yellow', fontSize: '20px', position: 'absolute' }} />
+                  </span>
+                  <br/>
+                </div>
               </Badge> 
             </div>
           );

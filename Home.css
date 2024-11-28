@@ -44,17 +44,13 @@ a{
   display:flex;
   justify-content:center;
 }
-
 .bestsellerscard{
     display:flex;
-    justify-content:center;
-
 }
 .jackettext{
     padding-top:-10;
     padding-left:50px        
 }
-
 .ornamentstext{
    padding-top:-10px;
    padding-left:40px;
@@ -63,7 +59,6 @@ a{
     padding-top:10px;
     padding-left:40px;
 }
-
 .gadgetstext{
     padding-top:-10px;
     padding-left:48px;
@@ -93,7 +88,6 @@ a{
         justify-content:center;
         flex-wrap: wrap;
         flex-direction: column;
-
         margin-left: 0px;
         row-gap: 80px;
     }

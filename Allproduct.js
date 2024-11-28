@@ -10,7 +10,7 @@ function Allproduct(){
   return (
 
     <div>
-        <Navbar></Navbar>
+        <Navbar></Navbar> <br></br>
         <div className='allproduct'>
         {/*Products From Homepage */}
         <Cardex 
@@ -206,6 +206,15 @@ function Allproduct(){
             cardtext="Gear Classic 20L Small Faux Leather Water Resistant Anti Theft Laptop Backpack"
             carditem1="Price:₹ 5,500"
             carditem2="User Rating 4.5"> </Cardex>
+
+        <Cardex
+            id="Zenme"
+            productimage='./Zenme.jpg'
+            cardtitle="Zenme"
+            cardtext="ZENEME Non-precious Metal Gold Plated and American Diamond Necklace Set & Bangles for Women & Girls"
+            carditem1="Price:₹ 339"
+            carditem2="User Rating 3.4">
+        </Cardex>
         </div> <br></br>
         <Useeffect></Useeffect>
         <br></br> <br></br>
