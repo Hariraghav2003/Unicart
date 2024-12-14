@@ -1,0 +1,62 @@
+.Carousel img{
+    width: 100px;
+    height: 600px;
+
+}
+
+.carouselone{
+    width: 1300px;
+    height: 550px;
+    margin-left: 120px;
+}
+.textone{
+    position: absolute;
+    top:50px;
+    left:1400px;
+    font-size:60px;
+}
+.texttwo{
+    font-family:'Times New Roman';
+    font-size:80px;
+    color:red;
+}
+
+.textthree{
+   padding-left:520px;
+   font-size:18px;
+}
+.textfour{
+    padding-Left:480px;
+    font-size:18px;
+}
+@media screen and (min-width:481px) and (max-width:768px){
+    .textone{
+        position: absolute;
+        top:50px;
+        left:390px;
+        font-size:20px;
+    }
+    .texttwo{
+        font-family:'Times New Roman';
+        font-size:80px;
+        color:red
+    }
+    .textthree{
+        padding-left:50px;
+        font-size:18px;
+    }
+    .textfour{      
+        padding-Left:0px;
+        font-size:18px;
+    }
+    .carouselone{
+        width: 80%;
+        height: 20%;
+        margin-left: 60px
+    }
+    .Carousel img{
+        width: 100px;
+        height: 300px;
+    
+    }
+}

@@ -1,0 +1,36 @@
+.footer{
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow:row;
+    column-count: 3;
+    column-gap: 200px;
+}
+.footertext{
+    width:500px;
+    margin-left:20px;
+}
+
+@media screen and (min-width:481px) and (max-width:768px){
+    .footertext{
+        width: 500px;
+        margin-left:20px;
+        text-align: justify;
+    }
+    .footer{
+        display: flex;
+        flex-flow:row;
+        column-count: 3;
+        column-gap: 20px;
+    }
+    .emailicon{
+       color:white;
+       font-size:17px;
+       position:absolute;
+       left:290px;
+       margin-top: 5px;
+    }
+    .email{
+        margin-left:25px;
+    }
+}
